@@ -2,6 +2,7 @@
 	--font-default: "DM Sans", Arial, Helvetica, sans-serif;
 	--font-slab: var(--font-default);
 	--modal-duration: 0.8s;
+	--thank-duration: 0.8s;
 }
 
 * {
@@ -208,11 +209,10 @@ main {
 }
 
 label {
-	font-family: var(--font-default);
-	font-size: 17px;
+	font-size: 15px;
 	font-weight: normal;
 	display: inline-block;
-	margin-bottom: 11px;
+	margin-bottom: 8px;
 }
 
 input {
@@ -342,7 +342,16 @@ input[data-error]::after {
 	transform: scale(0.7);
 }
 
-.close::before,
+.close::before {
+	position: absolute;
+	left: 15px;
+	content: " ";
+	height: 33px;
+	width: 3px;
+	background-color: #fff;
+	transform: rotate(45deg);
+}
+
 .close::after {
 	position: absolute;
 	left: 15px;
@@ -350,13 +359,6 @@ input[data-error]::after {
 	height: 33px;
 	width: 3px;
 	background-color: #fff;
-}
-
-.close::before {
-	transform: rotate(45deg);
-}
-
-.close::after {
 	transform: rotate(-45deg);
 }
 
@@ -371,6 +373,35 @@ input[data-error]::after {
 	color: #fff;
 	cursor: pointer;
 	border: 0;
+	margin-top: 20px;
+}
+
+
+/* thank window */
+
+.bground-thank {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+}
+
+.content-thank {
+	margin: 5% auto;
+	width: 100%;
+	max-width: 500px;
+	animation-name: thankopen;
+	animation-duration: var(--thank-duration);
+	background: #232323;
+	border-radius: 10px;
+	overflow: hidden;
+	position: relative;
+	color: #fff;
+	padding-top: 10px;
 }
 
 
@@ -507,8 +538,6 @@ input[data-error]::after {
 }
 
 .btn-signup {
-	outline: none;
-	text-transform: capitalize;
 	font-size: 1.3rem;
 	padding: 15px 23px;
 	margin: 0;
@@ -521,9 +550,11 @@ input[data-error]::after {
 
 .hero-img img {
 	width: 100%;
-	height: 100%;
+	height: 700px;
 	display: block;
 	padding: 0;
+	object-fit: cover;
+	object-position: bottom;
 }
 
 .copyrights {
