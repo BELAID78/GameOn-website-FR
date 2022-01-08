@@ -8,6 +8,7 @@
   margin: 0;
   padding: 0;
 }
+
 /* Landing Page */
 
 body {
@@ -33,35 +34,49 @@ img {
 .topnav {
   overflow: hidden;
   margin: 3.5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.header-logo {
-    float: left;
+.topnav p {
+  padding: 0;
 }
-.main-navbar {
-    float: right;
-}
+
 .topnav a {
-  float: left;
-  display: block;
+  display: inline-block;
   color: #000000;
   text-align: center;
   padding: 12px 12px;
   margin: 5px;
   text-decoration: none;
-  font-size: 20px;
-  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: bold;
+  position: relative;
 }
 
 .topnav a:hover {
   background-color: #ff0000;
   color: #ffffff;
-  border-radius: 15px;
+  border-radius: 11px;
+  font-weight: normal;
 }
 
 .topnav a.active {
   background-color: #ff0000;
   color: #ffffff;
-  border-radius: 15px;
+  border-radius: 11px;
+  font-weight: normal;
+}
+
+.topnav a::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  height: 1px;
+  right: 13px;
+  bottom: 9px;
+  left: 13px;
 }
 
 .topnav .icon {
@@ -526,4 +541,3 @@ footer {
     opacity: 1;
   }
 }
-
