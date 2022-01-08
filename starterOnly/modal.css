@@ -394,14 +394,23 @@ input[data-error]::after {
 	margin: 5% auto;
 	width: 100%;
 	max-width: 500px;
+	height: 720px;
 	animation-name: thankopen;
 	animation-duration: var(--thank-duration);
 	background: #232323;
 	border-radius: 10px;
-	overflow: hidden;
 	position: relative;
-	color: #fff;
 	padding-top: 10px;
+}
+
+.thank-body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.text-thank {
+	color: #c4c4c4;
 }
 
 

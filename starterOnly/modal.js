@@ -25,7 +25,7 @@ function launchModal() {
 // launch thank event
 thankBtn.forEach((btn) => btn.addEventListener("click", launchThank));
 
-// launch modal form
+// launch thank form
 function launchThank() {
   thankBg.style.display = "block";
 }
