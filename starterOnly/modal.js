@@ -25,11 +25,13 @@ function launchModal() {
 thankBtn.forEach((btn) => btn.addEventListener("click", launchThank));
 function launchThank() {
   thankBg.style.display = "block";
+  	
+	thankBtn.addEventListener("click",  function(launchThank) {
+			thankBg.style.display = "block";
 }*/
 
 document.getElementById("inscription").addEventListener("click", function(f) {
 
-	let erreur;
 	let firstName = document.getElementById("first");
 	let lastName = document.getElementById("last");
 	let emailValid = document.getElementById("email");
@@ -37,8 +39,8 @@ document.getElementById("inscription").addEventListener("click", function(f) {
 	let quantityCity = document.getElementById("quantity");
 	let checkBox = document.getElementById("checkbox1");
 
-	const thankBtn = document.querySelectorAll(".thank-btn");
-	const thankBg = document.querySelector(".bground-thank");
+	let thankBtn = document.querySelector(".thank-btn");
+	let thankBg = document.querySelector(".bground-thank");
 
 	if (!firstName.value) {
 		firstName.oninvalid = function(e) {
@@ -51,7 +53,7 @@ document.getElementById("inscription").addEventListener("click", function(f) {
 			}
 		};		
 	}
-	if (!lastName.value) {
+	else if (!lastName.value) {
 		lastName.oninvalid = function(e) {
 			e.target.setCustomValidity("");
 			if (!e.target.validity.valid) {
@@ -62,18 +64,19 @@ document.getElementById("inscription").addEventListener("click", function(f) {
 			}
 		};
 	} 
-	if (!emailValid.value) {
+	else if (!emailValid.value) {
 		emailValid.oninvalid = function(e) {
 			e.target.setCustomValidity("");
 			if (!e.target.validity.valid) {
 				if (e.target.value.length == 0) {
 					f.preventDefault();
 					e.target.setCustomValidity("Entrez une adresse valide. Exemple : contact@nom.com");
+					return true;
 				}
 			}
 		};
 	}
-	if (!birthValid.value) {
+	else if (!birthValid.value) {
 		birthValid.oninvalid = function(e) {
 			e.target.setCustomValidity("");
 			if (!e.target.validity.valid) {
@@ -84,7 +87,7 @@ document.getElementById("inscription").addEventListener("click", function(f) {
 			}
 		};
 	}
-	if (!quantityCity.value) {
+	else if (!quantityCity.value) {
 		quantityCity.oninvalid = function(e) {
 			e.target.setCustomValidity("");
 			if (!e.target.validity.valid) {
@@ -95,7 +98,7 @@ document.getElementById("inscription").addEventListener("click", function(f) {
 			}
 		};
 	}
-	if (!checkBox.value) {
+	else if (!checkBox.unchecked) {
 		checkBox.oninvalid = function(e) {
 			e.target.setCustomValidity("");
 			if (!e.target.validity.valid) {
@@ -106,11 +109,9 @@ document.getElementById("inscription").addEventListener("click", function(f) {
 			}
 		};
 	}
-	else {
-		thankBtn.forEach((btn) => btn.addEventListener("click", launchThank));
-		function launchThank() {
-			thankBg.style.display = "block";
-		  }
+	else {thankBtn.forEach((btn) => btn.addEventListener("click", launchThank));
+	function launchThank() {
+	  thankBg.style.display = "block";
 		}
 	}
-	);
+});
