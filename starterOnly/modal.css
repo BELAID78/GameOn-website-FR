@@ -18,7 +18,7 @@ body {
 	margin: 0;
 	display: flex;
 	flex-direction: column;
-	background-image: url("background.png");
+	/* /* background-image: url("background.png"); * */
 	font-family: var(--font-default);
 	font-size: 18px;
 	max-width: 1300px;
@@ -39,7 +39,6 @@ img {
 	margin: 3.5%;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 }
 
 .topnav p {
@@ -119,7 +118,8 @@ img {
 	.topnav a.icon {
 		float: right;
 		display: block;
-		margin-top: -15px;
+		color: #fe142f;
+		font-size: 1.3rem;
 	}
 }
 
@@ -404,9 +404,11 @@ input[data-error]::after {
 }
 
 .thank-body {
+	height: 88%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: space-around
 }
 
 .text-thank {
@@ -579,6 +581,14 @@ input[data-error]::after {
 }
 
 @media screen and (max-width: 800px) {
+	main {
+		margin: 7%;
+	}
+	.logo {
+		width: 150px;
+		padding-left: 10px;
+		padding-top: 15px;
+	}
 	.hero-section {
 		display: block;
 		box-shadow: unset;
@@ -586,7 +596,8 @@ input[data-error]::after {
 	.hero-content {
 		background: #fff;
 		color: #000;
-		padding: 20px;
+		padding: 0;
+		min-width: 100%;
 	}
 	.hero-content::after {
 		content: unset;
@@ -595,14 +606,18 @@ input[data-error]::after {
 		display: none;
 	}
 	.hero-headline {
-		font-size: 4.5rem;
+		font-size: 2.5rem;
+		font-weight: bold;
 		white-space: normal;
+		letter-spacing: -0.7px;
 	}
 	.hero-text {
-		width: unset;
-		font-size: 1.5rem;
+		width: 100%;
+		margin-top: 30px;
+		font-size: 0.9rem;
 	}
 	.hero-img img {
+		height: 100%;
 		border-radius: 10px;
 		margin-top: 40px;
 	}
@@ -612,8 +627,9 @@ input[data-error]::after {
 		padding: 12px 35px;
 	}
 	.copyrights {
-		margin-top: 50px;
 		text-align: center;
+		margin: 0;
+		font-size: 0.7rem;
 	}
 }
 
