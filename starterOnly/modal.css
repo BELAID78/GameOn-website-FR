@@ -39,6 +39,7 @@ img {
 	margin: 3.5%;
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .topnav p {
@@ -598,18 +599,20 @@ input {
 	display: none;
 }
 
-
+	.logo{
+		margin-bottom: 15px;
+	}
 @media screen and (max-width: 768px) {
 	main {
 		margin: 7%;
 	}
 	.logo {
-    position: relative;
-    width: 150px;
+        position: relative;
+        width: 150px;
 		padding-left: 10px;
 		padding-top: 15px;
-    z-index: 2;
-	}
+        z-index: 2;
+		}
 	.hero-section {
 		display: block;
 		box-shadow: unset;
