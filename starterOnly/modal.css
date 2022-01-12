@@ -53,7 +53,6 @@ img {
 	margin: 5px;
 	text-decoration: none;
 	font-size: 18px;
-	font-weight: bold;
 	position: relative;
 }
 
@@ -95,8 +94,9 @@ img {
   width: 95%;
   PADDING-left: 5%;
   border-radius: 5%;
-  }}
+  }
 
+}
 
 @media screen and (max-width: 768px) {
 	.topnav a {
@@ -273,12 +273,7 @@ input {
 }
 
 
-/* 
-input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
-} */
+
 
 .checkbox-label,
 .checkbox2-label {
@@ -551,7 +546,7 @@ input[data-error]::after {
 	position: absolute;
 	right: -80px;
 	top: 0;
-	}
+}
 
 .hero-content>* {
 	position: relative;
@@ -559,7 +554,7 @@ input[data-error]::after {
 }
 
 .hero-headline {
-	font-size: 4.8rem;
+	font-size: 4.7rem;
 	font-weight: normal;
 	white-space: nowrap;
 }
@@ -663,7 +658,7 @@ input[data-error]::after {
 		background-color:transparent;
 		color: #000000;
 		border-radius: none;
-		font-weight: bold;
+		
 	}
 	.topnav-link:nth-child(1):hover {
 		background-color: #ff0000;
