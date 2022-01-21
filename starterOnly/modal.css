@@ -62,6 +62,7 @@ img {
 	color: #ffffff;
 	border-radius: 11px;
 	font-weight: normal;
+	text-decoration: underline;
 }
 
 .topnav-link:nth-child(1) {
@@ -74,7 +75,6 @@ img {
 .after::after {
 	content: "";
 	position: fixed;
-	background-color: white;
 	height: 1px;
 	right: 13px;
 	bottom: 9px;
@@ -273,7 +273,9 @@ input {
 	border: 2px solid #e54858;
 }
 
-
+.formData[data-error-visible="true"] .text-control {
+	border: 2px solid #e54858;
+}
 
 
 .checkbox-label,
@@ -660,15 +662,13 @@ input {
 	.topnav-link:nth-child(1) {
 		background-color:transparent;
 		color: #000000;
-		border-radius: none;
-		
-	}
+		}
 	.topnav-link:nth-child(1):hover {
 		background-color: #ff0000;
 		color: #ffffff;
 		border-radius: 11px;
 		font-weight: normal;
-	}
+		}
 
 @keyframes modalopen {
 	from {
@@ -679,3 +679,19 @@ input {
 		opacity: 1;
 	}
 }}
+
+
+/*error messages*/
+#firstname-error,
+#lastname-error,
+#email-error,
+#age-error,
+#participations-error,
+#city-error,#cgu-error{
+  color:rgb(255, 94, 0);
+  font-size: .7rem;
+  padding: .5rem 0;
+  display: block;
+  }
+
+/*close-button*/

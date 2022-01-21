@@ -42,89 +42,101 @@
         <button class="btn-signup modal-btn">Je m'inscris</button>
       </div>
 
+      <!--modal-->
       <div class="bground">
         <div class="content">
-
-          <span class="close" id="closeform"></span>
-
+          <span class="close" id="close"></span>
           <div class="modal-body">
-            <form name="reserve" action="index.html" method="get" onsubmit="return validat();">
+            <form name="reserve" id="modal-form" method="post">
+
               <div class="formData">
                 <label for="first" >Prénom</label><br>
-                <input class="text-control" type="text" id="first" name="first" minlength="2" required /><br>
+                <input class="text-control" type="text" id="first" name="first" minlength="2"/><br>
               </div>
+              <div id="firstname-error"></div> <!--message d'erreur à afficher en JS si le champ n'est pas correct-->
               <div class="formData">
-                <label for="last">Nom</label><br>
-                <input class="text-control" type="text" id="last" name="last" required/><br>
+                <label for="last" >Nom</label><br>
+                <input class="text-control" type="text" id="last" name="last" minlength="2"/><br>
               </div>
+              <div id="lastname-error"></div> <!--message d'erreur à afficher en JS si le champ n'est pas correct-->
               <div  class="formData">
                 <label for="email">E-mail</label><br>
-                <input class="text-control" type="email" id="email" name="email" required/><br>
+                <input class="text-control" type="email" id="email" name="email"/><br>
               </div>
+              <div id="email-error"></div> <!--message d'erreur à afficher en JS si le champ n'est pas correct-->
               <div class="formData">
                 <label for="birthdate">Date de naissance</label><br>
-                <input class="text-control" type="date" id="birthdate" name="birthdate" required/><br>
+                <input class="text-control" type="date" id="birthdate" name="birthdate"/><br>
               </div>
+              <div id="age-error"></div> <!--message d'erreur à afficher en JS si le champ n'est pas correct-->
               <div class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required>
+                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" >
               </div>
-
+              <div id="participations-error"></div> <!--message d'erreur à afficher en JS si le champ n'est pas correct-->
               <p class="text-label">Quelles villes ?</p>
 
               <div class="formData">
-                <input class="checkbox-input" type="radio" id="location1" name="location" value="New York"  />
+                <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
                 <label class="checkbox-label" for="location1">
                   <span class="checkbox-icon"></span>New York
                 </label>
-                <input class="checkbox-input" type="radio" id="location2" name="location" value="San Francisco" />
+                <input class="checkbox-input" type="radio" id="location2" name="location" value="San Francisco"/>
                 <label class="checkbox-label" for="location2">
                   <span class="checkbox-icon"></span>San Francisco
                 </label>
-                <input class="checkbox-input" type="radio" id="location3" name="location" value="Seattle" />
+                <input class="checkbox-input" type="radio" id="location3" name="location" value="Seattle"/>
                 <label class="checkbox-label" for="location3">
                   <span class="checkbox-icon"></span>Seattle
                 </label>
-                <input class="checkbox-input" type="radio" id="location4" name="location" value="Chicago" />
+                <input class="checkbox-input" type="radio" id="location4" name="location" value="Chicago"/>
                 <label class="checkbox-label" for="location4">
                   <span class="checkbox-icon"></span>Chicago
                 </label>
-                <input class="checkbox-input" type="radio" id="location5" name="location" value="Boston" />
+                <input class="checkbox-input" type="radio" id="location5" name="location" value="Boston"/>
                 <label class="checkbox-label" for="location5">
                   <span class="checkbox-icon"></span>Boston
                 </label>
-                <input class="checkbox-input" type="radio" id="location6" name="location" value="Portland" />
+                <input class="checkbox-input" type="radio" id="location6" name="location" value="Portland"/>
                 <label class="checkbox-label" for="location6">
                   <span class="checkbox-icon"></span>Portland
                 </label>
               </div>
-
+              <div id="city-error"></div> <!--message d'erreur à afficher en JS si le champ n'est pas correct-->
               <div
                 class="formData">
-                <input class="checkbox-input" type="checkbox" id="checkbox1" checked required>
+                <input class="checkbox-input" type="checkbox" id="checkbox1" checked >
                 <label class="checkbox2-label" for="checkbox1" >
-                  <span class="checkbox-icon"></span>J'ai lu et accepté les conditions d'utilisation.
-                </label><br>
+                <span class="checkbox-icon"></span>
+                J'ai lu et accepté les conditions d'utilisation.
+                </label>
+                <div id="cgu-error"></div> <!--message d'erreur à afficher en JS si le champ n'est pas correct-->
+                <br>
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
-                  <span class="checkbox-icon"></span>Je souhaite être prévenu des prochains évènements.
+                  <span class="checkbox-icon"></span>
+                  Je souhaite être prévenu des prochains évènements.
                 </label><br>
-              </div>
+              </div>         
 
-              <input type="submit" id="inscription" class="btn-submit thank-btn" class="button" value="C'est parti" />
+              <input id="submitdata" class="btn-submit thank-btn button" type="submit" value="C'est parti" onclick="validateform(event)"/>
 
             </form>
           </div>
         </div>
       </div>
 
-      <div class="bground-thank">
+      <div id="message-modal" class="bground-thank">
         <div class="content-thank">
-          <span class="close" id="closethanks"></span>
-          <div class="thank-body">
-            <p class="text-thank">Merci !<br/> Votre réservation a bien été reçue.</p>
+
+          <span class="close" id="message-modal__close-message"></span>
+
+          <div id="message-model__body" class="thank-body">
+
+            <p class="text-thank">
+              Merci pour<br/>Votre votre inscription</p>
           </div>
-          <input type="submit" class="btn-submit button-thank" value="Fermer" />
+          <input id="close-button"  type="button" class="btn-submit button-thank" value="Fermer" />
         </div>
       </div>
     </main>
